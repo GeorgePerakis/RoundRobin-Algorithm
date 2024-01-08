@@ -214,6 +214,8 @@ public class RoundRobin {
                             
                             Avg_Response += Excecuting_Process.Response;
                             Avg_Turnaround += Tick - Excecuting_Process.ArrivalTime;
+
+                            int temp_remaining = Excecuting_Process.RemainingTime;
                             
                             Arrival_Table.remove(Excecuting_Process);
                             Excecuting_Process = Process_Search_Priority(Arrival_Table,Tick);
@@ -222,7 +224,7 @@ public class RoundRobin {
                                 Excecuting_Process.Initialized = true;
                                 Excecuting_Process.Response = Tick;
                             }
-                            Tick += Excecuting_Process.RemainingTime;
+                            Tick += temp_remaining;
                         }
                    }
                    
