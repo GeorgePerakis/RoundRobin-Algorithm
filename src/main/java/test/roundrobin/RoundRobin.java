@@ -147,10 +147,10 @@ public class RoundRobin {
             }
         }
         
-        System.err.println("Arrival Table: \n");
+        System.out.println("Arrival Table: \n");
         
         for (int i = 0; i < Arrival_Table.size(); i++) {
-            System.err.println("Process " + i + "\n" + Arrival_Table.get(i));
+            System.out.println("Process " + i + "\n" + Arrival_Table.get(i));
         }
         
         
@@ -164,7 +164,7 @@ public class RoundRobin {
         int Avg_Response = 0;
         
         
-        System.err.println("Initializing Round Robin Algorithm \n");
+        System.out.println("Initializing Round Robin Algorithm \n");
         
         while(end != true)
         {   
@@ -175,7 +175,7 @@ public class RoundRobin {
                 if(Excecuting_Process.RemainingTime > Time_Quantom)
                 {
                    Excecuting_Process.RemainingTime -= Time_Quantom;
-                   System.err.println("Process " + Excecuting_Process.Name + " Back on ready queue, " + Excecuting_Process.RemainingTime + " Ticks remaining");
+                   System.out.println("Process " + Excecuting_Process.Name + " Back on ready queue, " + Excecuting_Process.RemainingTime + " Ticks remaining");
                    Process Temp = Excecuting_Process;
                    Arrival_Table.remove(Excecuting_Process);
                    Arrival_Table.add(Temp);
@@ -191,7 +191,7 @@ public class RoundRobin {
                 else
                 {
                    int Remaining_Quantom = Time_Quantom - Excecuting_Process.RemainingTime;
-                   System.err.println("Process " + Excecuting_Process.Name + " Excecuted \n" + "Response: " + Excecuting_Process.Response + " Turnaround: " + (Tick - Excecuting_Process.ArrivalTime));
+                   System.out.println("Process " + Excecuting_Process.Name + " Excecuted \n" + "Response: " + Excecuting_Process.Response + " Turnaround: " + (Tick - Excecuting_Process.ArrivalTime));
                    
                    Avg_Response += Excecuting_Process.Response;
                    Avg_Turnaround += Tick - Excecuting_Process.ArrivalTime;
@@ -210,7 +210,7 @@ public class RoundRobin {
                         while(Remaining_Quantom > Excecuting_Process.RemainingTime)
                         {
                             Remaining_Quantom -= Excecuting_Process.RemainingTime;
-                            System.err.println("Process " + Excecuting_Process.Name + " Excecuted in Quantom \n" + "Response: " + Excecuting_Process.Response + " Turnaround: " + (Tick - Excecuting_Process.ArrivalTime));
+                            System.out.println("Process " + Excecuting_Process.Name + " Excecuted in Quantom \n" + "Response: " + Excecuting_Process.Response + " Turnaround: " + (Tick - Excecuting_Process.ArrivalTime));
                             
                             Avg_Response += Excecuting_Process.Response;
                             Avg_Turnaround += Tick - Excecuting_Process.ArrivalTime;
@@ -241,7 +241,7 @@ public class RoundRobin {
             }
         }
         
-        System.err.println("\nRound Robin finished with \nAverage Response: " + (float)Avg_Response/Processes_Num + "\nAverage Turnaround: "+ (float)Avg_Turnaround/Processes_Num);
+        System.out.println("\nRound Robin finished with \nAverage Response: " + (float)Avg_Response/Processes_Num + "\nAverage Turnaround: "+ (float)Avg_Turnaround/Processes_Num);
      }
 
 }
