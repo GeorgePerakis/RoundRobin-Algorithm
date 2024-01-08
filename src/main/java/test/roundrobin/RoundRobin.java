@@ -1,11 +1,8 @@
 package test.roundrobin;
 
-import static java.lang.Math.random;
-import static java.lang.StrictMath.random;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.Scanner;
 
 public class RoundRobin {
     
@@ -121,11 +118,10 @@ public class RoundRobin {
         }
         
         
-        System.out.println("\n" + "Enter Time Quantom");
+        System.out.println("\n" + "Enter Time Quantom \n");
         int Time_Quantom = UserInput.getInteger();
         
         boolean end = false;
-        int Time_Passed = 0;
         
         List<Process> Arrival_Table = new ArrayList<>();
         
